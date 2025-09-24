@@ -3,13 +3,15 @@
 <head>
   <title>Lista de Veículos</title>
 </head>
-<body>
+<body style="background-color: beige;">
   <h1>Lista de Veículos</h1>
-  <a href="/veiculos/adicionar">Cadastrar novo veículo</a>
+  <a href="/veiculos/adicionar">
+    <button>Cadastrar novo veículo</button>
+  </a>
   <ul>
     <% veiculos.forEach(veiculo => { %>
-      <li>
-        <%= veiculo.id %> - <%= veiculo.nome %>
+      <li style="display:flex; align-items: center; gap: 10px;">
+        <span style="min-width: 100px;"><%= veiculo.id %> - <%= veiculo.nome %></span>
         <form action="/veiculos/editar/<%= veiculo.id %>" method="POST" style="display:inline;">
           <input type="text" name="nome" placeholder="Novo nome">
           <button type="submit">Editar</button>

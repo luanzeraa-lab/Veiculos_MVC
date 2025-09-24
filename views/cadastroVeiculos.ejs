@@ -3,13 +3,13 @@
 <head>
   <title>Cadastro de Veículos</title>
 </head>
-<body>
+<body style="background-color: beige;">
   <h1>Cadastrar Novo Veículo</h1>
   <form action="/veiculos/adicionar" method="POST">
-    <input type="number" name="id" placeholder="ID" required>
+    <input type="number" name="id" placeholder="ID" required min="0">
     <input type="text" name="nome" placeholder="Nome do veículo" required>
     <button type="submit">Salvar</button>
   </form>
-  <a href="/veiculos/listar">Voltar</a>
+  <a href="/veiculos/listar"> <--Voltar</a>
 </body>
 </html>
