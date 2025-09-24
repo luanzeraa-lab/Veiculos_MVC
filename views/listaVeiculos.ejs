@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Veículos</title>
+</head>
+<body>
+  <h1>Lista de Veículos</h1>
+  <a href="/cadastro">Cadastrar novo veículo</a>
+  <ul>
+    <% veiculos.forEach(v => { %>
+      <li>
+        <%= v.id %> - <%= v.nome %>
+        <form action="/editar/<%= v.id %>" method="POST" style="display:inline;">
+          <input type="text" name="nome" placeholder="Novo nome">
+          <button type="submit">Editar</button>
+        </form>
+        <a href="/excluir/<%= v.id %>">Excluir</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
